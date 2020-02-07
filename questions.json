@@ -1,0 +1,262 @@
+[
+  {
+    "QuestionText": "When the below code is run, which of the following will be output? Assume hello.js is a script that outputs the string \"Hello World. \" as HTML.",
+    "Code": {
+      "Type": "html",
+      "Text": "&lt;script src=\"hello.js\"&gt;\nAre you listening?\n&lt;/script&gt;"
+    },
+    "Answers": [
+      {
+        "Answer": "~No Output~",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "Hello World.",
+        "IsCorrect": true
+      },
+      {
+        "Answer": "Are you listening?",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "Hello World. Are you listening?",
+        "IsCorrect": false
+      }
+    ],
+    "Justification": "If a src attribute is set for a script tag, any content within the script tag is ignored."
+  },
+  {
+    "QuestionText": "What would occur if the below code was run?",
+    "Code": {
+      "Type": "js",
+      "Text": "/*<br>  /* This will say Hello World */<br>*/<br>alert( 'Hello' )<br>alert( 'World' )<br>"
+    },
+    "Answers": [
+      {
+        "Answer": "The code will output \"Hello World\" as text.",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "The code will output \"Hello\" and \"World\" as seperate dialog alerts.",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "The code will fail because of the lack of semicolons between lines.",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "The code will fail because there is a nested comment.",
+        "IsCorrect": true
+      }
+    ],
+    "Justification": "Javascript does allow a lack of semicolons between lines although it is considered best practice to include them since the parsing behavior is unintuitive. Javascript however doesn't support nested comments. If the comment wasn't nested, the code would render \"Hello\" and \"World\" as seperate dialog alerts."
+  },
+  {
+    "QuestionText": "What is the returned value of the following function?",
+    "Code": {
+      "Type": "js",
+      "Text": "function calculation(){<br>  return 3 + 4 + \"px\";<br>}"
+    },
+    "Answers": [
+      {
+        "Answer": "\"7px\"",
+        "IsCorrect": true
+      },
+      {
+        "Answer": "\"34px\"",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "NaN",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "This code will result in an error.",
+        "IsCorrect": false
+      }
+    ],
+    "Justification": "Javascript determines operators from left to right when at the same operator precedence. When assessing 3 + 4, the plus operator determines an addition and creates a 7. Then, 7 + \"px\" is evaluated as a concatenation, creating \"7px\"."
+  },
+  {
+    "QuestionText": "What is the returned type and value of the following function?",
+    "Code": {
+      "Type": "js",
+      "Text": "function questionThree(){<br>  let nullType = typeof null;<br>  return nullType;<br>}"
+    },
+    "Answers": [
+      {
+        "Answer": "Type: Null, Value: null",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "Type: Object, Value: null",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "Type: String, Value: \"null\"",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "Type: String, Value: \"object\"",
+        "IsCorrect": true
+      }
+    ],
+    "Justification": "The typeof function normally retrieves the type of a supplied variable.Typeof null is rendered as a string called \"object\". This is an error in the language that has existed since its inception and has been kept for compatibility reasons. The actual type of null is null."
+  },
+  {
+    "QuestionText": "What is the value of ansOne and ansTwo when the function returns?",
+    "Code": {
+      "Type": "js",
+      "Text": "function questionFour(){<br>  let ansOne = (null == undefined);<br>  let ansTwo = \"10\"/0;<br>  return;<br>}"
+    },
+    "Answers": [
+      {
+        "Answer": "ansOne = true, ansTwo = Infinity",
+        "IsCorrect": true
+      },
+      {
+        "Answer": "ansOne = false, ansTwo = 0",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "ansOne = null, ansTwo = null",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "ansOne = null, ansTwo = 0",
+        "IsCorrect": false
+      }
+    ],
+    "Justification": "Null and undefined are a \"special pair\" where they equal each other when tested against an equality (but not strict equality ===). The boolean expression is assigned to a variable and therefore the output boolean value is true.<p>When performing a division, strings are automatically converted to a number if able (check numeric conversions for other values). A numerical division by zero results in Infinity in Javascript, as math operations are designed to be \"safe\" and as fraction denominators approach zero the resulting fraction tends to approach infinity. It is best practice to make sure you test your code to avoid erroneous results in math.</p>"
+  },
+  {
+    "QuestionText": "What is the result of converting null and undefined into numbers?",
+    "Code": {
+      "Type": "none",
+      "Text": null
+    },
+    "Answers": [
+      {
+        "Answer": "Null converts to 0, Undefined converts to 0.",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "Null converts to 0, Undefined converts to NaN.",
+        "IsCorrect": true
+      },
+      {
+        "Answer": "Null converts to NaN, Undefined converts to 0.",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "Null converts to NaN, Undefined converts to NaN.",
+        "IsCorrect": false
+      }
+    ],
+    "Justification": "Despite null and undefined being a special pair, they convert to different values when transformed into numbers. Javascript is fun!"
+  },
+  {
+    "QuestionText": "What do the following two functions return?",
+    "Code": {
+      "Type": "js",
+      "Text": "function sixTopFunction(){<br> return (Boolean(\" \") == Boolean(\"0\"));<br>}<br><br>function sixBotFunction(){<br>  return Number(239497n);<br>}"
+    },
+    "Answers": [
+      {
+        "Answer": "sixTopFunction returns false, sixBotFunction returns 239497",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "sixTopFunction returns false, sixBotFunction returns NaN",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "sixTopFunction returns true, sixBotFunction returns 239497",
+        "IsCorrect": true
+      },
+      {
+        "Answer": "sixTopFunction returns true, sixBotFunction returns NaN",
+        "IsCorrect": false
+      }
+    ],
+    "Justification": "When doing a boolean conversion, any data that isn't numerical zero, empty string, null, undefined or NaN is a true value. String zero is a true value, and so is a string with whitespace.<p>Numbers that end with n are of the type BigInt. Since the number is within the acceptable range of being convertible to a number type, it is able to change to 239497.</p>"
+  },
+  {
+    "QuestionText": "What is the difference between the unary and binary plus operator?",
+    "Code": {
+      "Type": "none",
+      "Text": null
+    },
+    "Answers": [
+      {
+        "Answer": "Unary plus is used for addition, while binary plus is used for concatenation.",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "Binary plus is used for concatenation, while unary plus is used for addition.",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "Unary plus is used for both concatenation and addition, while binary plus is used as a shorthand for increment/decrement.",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "Unary plus is used as a shorthand for numerical conversion, while binary plus is used for both concatenation and addition.",
+        "IsCorrect": true
+      }
+    ],
+    "Justification": "Remember Unary as meaning \"applies to one thing\" and Binary as \"applies to two things\". Unary plus is a shorthand for the Number() function. Other uses for plus include the addition and concatenation operation (binary plus). Note that '++' is considered a different operator (increment/decrement) when being run through the lexical analyzer."
+  },
+  {
+    "QuestionText": "What is the difference between a and b in the following code?",
+    "Code": {
+      "Type": "js",
+      "Text": "let a = 3++;<br>let b = ++3;"
+    },
+    "Answers": [
+      {
+        "Answer": "a = 4, b = 4;",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "a = 3; b = 4;",
+        "IsCorrect": true
+      },
+      {
+        "Answer": "a = 4; b = 3;",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "a = 3; b = 3;",
+        "IsCorrect": false
+      }
+    ],
+    "Justification": "variable++ returns the number first and then increments it. ++variable increments the number first then returns it."
+  },
+  {
+    "QuestionText": "When a numerical operator is prefixed to an assignment operator, which of the following are true? (See the code for an example.)",
+    "Code": {
+      "Type": "js",
+      "Text": "a += 5;"
+    },
+    "Answers": [
+      {
+        "Answer": "The numerical operator applies a conversion, and the operator precedence is at the same level as the assignment operator.",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "The numerical operator applies a conversion, and the operator precedence is at the same level as the numerical operator.",
+        "IsCorrect": false
+      },
+      {
+        "Answer": "The numerical operator applies a numerical function, and the operator precedence is at the same level as the assignment operator.",
+        "IsCorrect": true
+      },
+      {
+        "Answer": "The numerical operator applies a numerical function, and the operator precedence is at the same level as the numerical operator.",
+        "IsCorrect": false
+      }
+    ],
+    "Justification": "'a += 5;' is a shorthand for 'a = a + 5;' One important caveat is that these shorthands operate after all other calculations due to having the same precedence as the assignment operator, so it is best practice to only use the shorthand for singular lines, and write it out in full for larger calculations."
+  }
+]

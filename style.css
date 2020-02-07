@@ -1,0 +1,54 @@
+header 
+{
+    background-color: lightgray;
+}
+
+header h1 
+{
+    margin: 0;
+}
+
+html, body 
+{
+    margin: 20px;
+    padding: 0;
+    background-color: lavender;
+}
+
+img
+{
+    vertical-align:middle;
+}
+
+.startBtn
+{
+    left: 50%;
+    margin-left: 50%;
+    transform: translate(-50%);
+    width: 80px;
+}
+
+#question
+{
+  margin-top: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+}
+
+#code
+{
+  font-size: 20px;
+}
+
+#answers
+{
+  font-size: 20px;
+  line-height: 2;
+}
+
+
+#justification
+{
+    background-color: palegoldenrod;
+    font-size: 20px;
+}
